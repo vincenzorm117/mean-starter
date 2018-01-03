@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('partials/head'); %>
+<body>
+    <%- include('partials/nav'); %>
+    <main class="container">
+    	<ul class="collapsible" data-collapsible="accordion">
+    	    <li>
+    	      <div class="collapsible-header">First</div>
+    	      <div class="collapsible-body">
+					<div class="input-field col s6">
+			          	<input placeholder="Placeholder" id="first_name" type="text" class="validate">
+			          	<label for="first_name">Link</label>
+			        </div>
+			        <div class="actions">
+			        	<a class="waves-effect waves-light btn">Update</a>
+			        	<a class="waves-effect waves-light btn">Delete</a>
+			        </div>
+    	      </div>
+    	    </li>
+    	  </ul>
+    </main>
+	<div id="modal1" class="modal bottom-sheet">
+	   <div class="modal-content">
+ 			<div class="input-field col s6">
+           		<input placeholder="Placeholder" id="link-to-add" type="text" class="validate">
+           		<label for="first_name">Link</label>
+         	</div>
+	   </div>
+	   <div class="modal-footer">
+	     	<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="save-link">Save</a>
+	     	<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+	   </div>
+	 </div>
+	<div class="fixed-action-btn">
+	    <button class="btn-floating btn-large red btn modal-trigger" href="#modal1" data-target="modal1">
+          <i class="large material-icons">mode_edit</i>
+        </button>
+	</div>
+</body>
+</html>

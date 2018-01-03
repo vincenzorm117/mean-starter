@@ -1,0 +1,91 @@
+// Breakpoint
+@mixin bp($size, $isMin: true) {
+	@if $isMin == true {
+		@if $size == s {
+			@media(min-width: $S) { @content; }
+		} @else if $size == m {
+			@media(min-width: $M) { @content; }
+		} @else if $size == l {
+			@media(min-width: $L) { @content; }
+		} @else if $size == xl {
+			@media(min-width: $XL) { @content; }
+		} @else {
+			@media(min-width: $size) { @content; }
+		}
+	} @else {
+		@if $size == s {
+			@media(max-width: ($S - 1)) { @content; }
+		} @else if $size == m {
+			@media(max-width: ($M - 1)) { @content; }
+		} @else if $size == l {
+			@media(max-width: ($L - 1)) { @content; }
+		} @else if $size == xl {
+			@media(max-width: ($XL - 1)) { @content; }
+		} @else {
+			@media(max-width: ($size - 1)) { @content; }
+		}
+	}
+}
+
+
+@mixin colorMixer($color, $name, $res) {
+	$colorHue: hue($color);
+	$colorSaturation: saturation($color);
+	$colorLightness: lightness($color);
+	@if $colorHue <= ($res/2) {
+		$colorHue: 360 + $colorHue - ($res/2);
+	}
+	@keyframes #{$name} {
+		@for $i from 1 through $res {
+			$colorHue: $colorHue + $i;
+			@if not ($colorHue < 360) {
+				$colorHue: 0;
+			}
+			#{$i*100/$res}% {
+				color: hsl($colorHue, $colorSaturation, $colorLightness);
+				fill: hsl($colorHue, $colorSaturation, $colorLightness);
+			}
+		}
+	}
+}
+
+
+
+@mixin colorMixerSpec($color, $name, $res, $property) {
+	$colorHue: hue($color);
+	$colorSaturation: saturation($color);
+	$colorLightness: lightness($color);
+	@if $colorHue <= ($res/2) {
+		$colorHue: 360 + $colorHue - ($res/2);
+	}
+	@keyframes #{$name} {
+		@for $i from 1 through $res {
+			$colorHue: $colorHue + $i;
+			@if not ($colorHue < 360) {
+				$colorHue: 0;
+			}
+			#{$i*100/$res}% {
+				#{$property}: hsl($colorHue, $colorSaturation, $colorLightness);
+			}
+		}
+	}
+}
+
+
+
+@mixin rainbowColors($color, $name) {
+	$colorHue: hue($color);
+	$colorSaturation: saturation($color);
+	$colorLightness: lightness($color);
+	@keyframes #{$name} {
+		@for $i from 1 through 360 {
+			$colorHue: $colorHue + $i;
+			@if not ($colorHue < 360) {
+				$colorHue: 0;
+			}
+			#{$i*100/360}% {
+				color: hsl($colorHue, $colorSaturation, $colorLightness);
+			}
+		}
+	}
+}

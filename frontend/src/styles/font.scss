@@ -1,0 +1,26 @@
+
+
+$font1: 'Roboto', Helvetica, sans-serif;
+$font2: monospace;
+ 
+ 
+
+
+body, p {
+	font-family: $font1;
+	font-weight: 300;
+}
+
+ h1,  h2,  h3,  h4,  h5,  h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: $font1;
+}
+
+code, .code {
+	font-family: $font2;
+}
+
+
+$fh: $font1;
+$fb: $font1;
+$fc: $font2;

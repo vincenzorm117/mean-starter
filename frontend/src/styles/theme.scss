@@ -1,0 +1,201 @@
+
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+//	VARs
+
+// Spacing and Size
+$max-width: 1200px;
+$gutter: 12px;
+
+
+// Responsive breakpoints
+$S: 480px;
+$M: 768px;
+$L: 992px;
+$XL: 1200px;
+
+
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+//	Element Setings
+
+html, body {
+	background: #e8e8e8;
+}
+
+body {
+	position: relative;
+	min-height: 100vh;
+	overflow-x: hidden;
+	font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.4;
+	font-weight: 400;
+}
+h1 { font-size: 50px; font-weight: 300; }
+h2 { font-size: 46px; font-weight: 300; }
+h3 { font-size: 40px; font-weight: 300; }
+h4 { font-size: 36px; font-weight: 300; }
+h5 { font-size: 28px; font-weight: 300; }
+h6 { font-size: 24px; font-weight: 300; }
+
+p {
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 1.4;
+	letter-spacing: 0.4px;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+	font-weight: 400;
+}
+
+ul.dots {
+	li {
+		// padding-left: 152px;
+		position: relative;
+		&:before {
+			position: absolute;
+			top: 14px;
+			left: 0;
+			content: '';
+			display: block;
+			border-radius: 50%;
+			border: 1px solid #ececec;
+			height: 3px;
+			width: 3px;
+		}
+	}
+}
+
+img {
+	display: inline-block;
+	width: 100%;
+	user-select: none;
+}
+
+p a {
+	font-weight: 700;
+	color: #eb606b;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	&, &:hover, &:focus, &:visited, &:active {
+		color: inherit;
+	}
+}
+
+button {
+	cursor: pointer;
+	background: none;
+	color: inherit;
+}
+
+textarea, input, select {
+	&, &:active, &:focus, &:visited, &:hover, &:focus:active {
+		outline: 0;
+	}
+}
+
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+//	Classes
+
+
+.block {
+	display: block;
+}
+
+.inline-block {
+	display: inline-block;
+}
+
+b, .bold {
+	font-weight: 700;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.strike-through {
+	text-decoration: line-through;	
+}
+
+
+#backgrid {
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: -100;
+}
+
+
+.section-title {
+	padding: 30px 0 10px;
+	h2 {
+		text-align: center;
+		color: #fff;
+		font-size: 30px;
+	}
+}
+
+// .tech-tags {
+// 	padding: 10px;
+// 	display: flex;
+// 	flex-flow: row wrap;
+// 	align-items: center;
+// 	.tech-tag {
+// 		display: inline-block;
+// 		padding: 4px 9px;
+// 		background: transparent;
+// 		color: #5d805e;
+// 		border-radius: 5px;
+// 		margin: 5px;
+// 		border: 1px solid #5d805e;
+// 	}
+// }
+
+
+.btn-outline {
+	display: inline-block;
+	background: transparent;
+	padding: 1px 26px;
+	line-height: 33px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 14px;
+	position: relative;
+	// transition: all 300ms linear;
+	text-align: center;
+	font-weight: 600;
+	border: 2px solid $c-white;
+	color: $c-white;
+	background: transparent;
+	&:hover {
+		background: $c-white;
+		color: $c-black;
+	}
+	&.inverted {
+		border: 2px solid $c-black;
+		background: transparent;;
+		color: $c-black;
+		&:hover {
+			background: $c-black;
+			color: $c-white;
+		}
+	}
+}
+
+
+

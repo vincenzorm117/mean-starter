@@ -1,0 +1,83 @@
+
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+// Flex Column System
+
+.container {
+	max-width: $max-width;
+	margin: 0 auto;
+	padding: 0 $gutter1;
+}
+
+.row {
+	display: flex;
+	flex-flow: row wrap;
+	margin: 0 -#{$gutter1};
+	&.center { justify-content: center; }
+	&.middle { align-items: center; }
+	&.left { justify-content: flex-start; }
+	&.right { justify-content: flex-end; }
+	&.between { justify-content: space-between; }
+	&.around { justify-content: space-around; }
+	&.nowrap { flex-wrap: nowrap; }
+}
+
+.col {
+	padding: 0 $gutter1;
+	box-sizing: border-box;
+
+	@for $i from 1 through 12 {
+		&.s#{$i} { width: calc(100% * #{$i} / 12); }
+		&.s-left#{$i} { margin-left: calc(100% * #{$i} / 12); }
+		&.s-right#{$i} { margin-right: calc(100% * #{$i} / 12); }
+	}
+
+
+	@media(min-width: $M) {
+		@for $i from 1 through 12 {
+			&.m#{$i} { width: calc(100% * #{$i} / 12); }
+			&.m-left#{$i} { margin-left: calc(100% * #{$i} / 12); }
+			&.m-right#{$i} { margin-right: calc(100% * #{$i} / 12); }
+		}
+	}
+
+	@media(min-width: $L) {
+		@for $i from 1 through 12 {
+			&.l#{$i} { width: calc(100% * #{$i} / 12); }
+			&.l-left#{$i} { margin-left: calc(100% * #{$i} / 12); }
+			&.l-right#{$i} { margin-right: calc(100% * #{$i} / 12); }
+		}
+	}
+}
+
+
+.coll {
+	padding: 0 $gutter1;
+	box-sizing: border-box;
+
+	@for $i from 1 through 100 {
+		&.s#{$i} { width: calc(100% * #{$i} / 100); }
+		&.s-left#{$i} { margin-left: calc(100% * #{$i} / 100); }
+		&.s-right#{$i} { margin-right: calc(100% * #{$i} / 100); }
+	}
+
+
+	@media(min-width: $M) {
+		@for $i from 1 through 100 {
+			&.m#{$i} { width: calc(100% * #{$i} / 100); }
+			&.m-left#{$i} { margin-left: calc(100% * #{$i} / 100); }
+			&.m-right#{$i} { margin-right: calc(100% * #{$i} / 100); }
+		}
+	}
+
+	@media(min-width: $L) {
+		@for $i from 1 through 100 {
+			&.l#{$i} { width: calc(100% * #{$i} / 100); }
+			&.l-left#{$i} { margin-left: calc(100% * #{$i} / 100); }
+			&.l-right#{$i} { margin-right: calc(100% * #{$i} / 100); }
+		}
+	}
+}

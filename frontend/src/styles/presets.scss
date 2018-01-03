@@ -1,0 +1,52 @@
+
+/*************************/
+/* Insight Theme Presets */
+/*************************/
+* {
+	box-sizing: border-box;
+}
+
+a {
+	display: inline-block;
+	&, &:hover {
+		text-decoration: none;
+	}
+}
+
+img {
+	display: inline-block;
+	width: 100%;
+	height: auto;
+	user-select: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+ul, ol, li {
+	list-style: none;
+}
+
+
+[contenteditable="true"],
+button, 
+input {
+	&,
+	&:active,
+	&:focus,
+	&:visited,
+	&:active:focus {
+		outline: none;
+		-webkit-apperance: none;
+		box-shadow: none;
+		border: none;
+		border-radius: 0;
+	}
+}
+
+
+
